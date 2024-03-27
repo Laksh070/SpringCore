@@ -1,0 +1,26 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.constructorInjection"></context:component-scan>
+
+    <bean class="com.constructorInjection.Certi" name="cer">
+        <constructor-arg value="Android using Kotlin"/>
+    </bean>
+
+    <bean class="com.constructorInjection.Person" name="person">
+        <constructor-arg value="Laksh" />
+        <constructor-arg value="12"/>
+        <constructor-arg ref="cer"/>
+    </bean>
+
+    <bean class="com.constructorInjection.Addition" name="add">
+        <constructor-arg value="12" type="double"/>
+        <constructor-arg value="89"  type="int"/>
+    </bean>
+</beans>
